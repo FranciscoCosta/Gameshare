@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import localFont from "next/font/local";
 
-
 const ibmPlexSans = localFont({
   src: [
     { path: "/fonts/IBMPlexSans-Regular.ttf", weight: "400", style: "normal" },
@@ -27,7 +26,7 @@ const bebasNeue = localFont({
 
 export const metadata: Metadata = {
   title: "GameShare",
-  description: "GameShare is a online store of renting games".,
+  description: "GameShare is a online store of renting games",
 };
 
 export default function RootLayout({
@@ -37,18 +36,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange
+      <body
+        className={`${ibmPlexSans.className} ${bebasNeue.variable} antialiased`}
       >
-        <body
-          className={`${ibmPlexSans.className} ${bebasNeue.variable} antialiased`}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
           {children}
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
